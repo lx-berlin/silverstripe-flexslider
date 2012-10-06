@@ -1,0 +1,42 @@
+/**
+* set margins to 0px
+*/
+.flexslider .slides { margin: 0px; }
+.flexslider .slides li { margin: 0px; }
+.flexslider .flex-control-nav { margin: 0px; } 
+.flexslider .flex-control-paging { margin: 0px; }
+.flexslider .flex-direction-nav { margin: 0px; }
+
+/**
+* Additional Styles
+*/
+
+/* Caption style */
+/* IE rgba() hack */
+.flex-caption {
+    background:none;
+    -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); zoom: 1;
+}
+.flex-caption {
+    width: 96%; 
+    padding: 2%; 
+    position: absolute; 
+    left: 0; 
+    bottom: 0; 
+    background: rgba(0,0,0,.3); 
+    color: #fff; 
+    text-shadow: 0 -1px 0 rgba(0,0,0,.3); 
+    font-size: 14px; 
+    line-height: 18px;
+}
+
+.flex-caption-inner             { }
+.flex-caption-inner.heading     { display: block; font-weight: bold; }
+.flex-caption-inner.description { display: block; }
+
+/**
+* Bugfix: ist keine Slideshow aktiviert (nur manuelles scrollen), dann sind auf dem ersten und letzten Slide jeweils die deaktivierten navi-buttons ausserhalb des Containers zu sehen
+*/
+.flexslider       .flex-direction-nav .flex-disabled {display:none;}
+.flexslider:hover .flex-direction-nav .flex-disabled {display:block; opacity: .3!important; filter:alpha(opacity=30); cursor: default;}
