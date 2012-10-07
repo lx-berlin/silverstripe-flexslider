@@ -15,8 +15,9 @@ Silverstripe 3.0
 
 ## Install
 
-Download the module and unzip it. Make sure the folder name is "flexslider".
-Add to your _config.php: `Object::add_extension('Page', 'FlexSliderExtension');`
+- download the module and unzip it. Make sure the folder name is "flexslider".
+- run /dev/build
+- add to your mysite/_config.php: `Object::add_extension('Page', 'FlexSliderExtension');`
 
 ## Usage
 
