@@ -1,3 +1,8 @@
+> do not use this module. its not yet working!!
+
+
+----------
+
 # silverstripe-flexslider
 
 A module for Silverstripe 3.0 that uses the [FlexSlider 2 library](https://github.com/woothemes/FlexSlider) to create sliders. Sliders can be created from within the cms or by instantiating a new FlexSlider Object in php. 
