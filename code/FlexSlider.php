@@ -206,9 +206,9 @@ class FlexSlider extends DataObject {
                                    );
                                    
         // load all needed Javascript
-        Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.min.js');
-        Requirements::javascript(project() . '/javascript/jquery.easing.1.3.js');
-        Requirements::javascript('flexslider/thirdparty/FlexSlider/jquery.flexslider-min.js');
+        Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.js');
+        Requirements::javascript('flexslider/javascript/jquery.easing.1.3.js');
+        Requirements::javascript('flexslider/thirdparty/FlexSlider/jquery.flexslider.js');
         Requirements::javascriptTemplate('flexslider/javascript/flexslider.template.js', $flexslider_config);
         
         // load css
