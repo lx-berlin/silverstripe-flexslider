@@ -1,11 +1,17 @@
 /**
-* set margins to 0px
+* we need to reset many styles
+* especially overwriting some styles from the simple theme
 */
 .flexslider .slides { margin: 0px; }
 .flexslider .slides li { margin: 0px; }
 .flexslider .flex-control-nav { margin: 0px; } 
 .flexslider .flex-control-paging { margin: 0px; }
 .flexslider .flex-direction-nav { margin: 0px; }
+.flexslider .flex-direction-nav li { list-style-type: none; }
+.flexslider .flex-caption { margin: 0px; }
+.flexslider .flex-prev { border: none; }
+.flexslider .flex-next { border: none; }
+.flexslider .slides img { max-width: 100%; border: 0px none; margin: 0px; }
 
 /**
 * Additional Styles
@@ -17,8 +23,6 @@
     background:none;
     -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
     filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); zoom: 1;
-}
-.flex-caption {
     width: 96%; 
     padding: 2%; 
     position: absolute; 
