@@ -97,16 +97,20 @@ class FlexSlider extends DataObject {
         $field_randomize        = new CheckboxField("randomize", _t("FlexSlider.randomize"));
         $field_showControlNav   = new CheckboxField("showControlNav", _t("FlexSlider.showControlNav"));
         
-        $fields->addFieldToTab('Root.Main', $field_Title);
-        $fields->addFieldToTab('Root.Main', $field_slideshow);
-        $fields->addFieldToTab('Root.Main', $field_animationLoop);
-        $fields->addFieldToTab('Root.Main', $field_animation);
-        $fields->addFieldToTab('Root.Main', $field_direction);
-        $fields->addFieldToTab('Root.Main', $field_easing);
-        $fields->addFieldToTab('Root.Main', $field_slideshowSpeed);
-        $fields->addFieldToTab('Root.Main', $field_animationSpeed);
-        $fields->addFieldToTab('Root.Main', $field_randomize);
-        $fields->addFieldToTab('Root.Main', $field_showControlNav);
+        $FieldsArray = array(
+            $field_Title,
+            $field_slideshow,
+            $field_animationLoop,
+            $field_animation,
+            $field_direction,
+            $field_easing,
+            $field_slideshowSpeed,
+            $field_animationSpeed,
+            $field_randomize,
+            $field_showControlNav
+        );
+        
+        $fields->addFieldsToTab('Root.Main', $FieldsArray);
         
         return $fields;
     }
@@ -202,16 +206,15 @@ class FlexSlider extends DataObject {
                                    );
                                    
         // load all needed Javascript
-        Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.js');
-        //Requirements::javascript('//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js');
+        Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.min.js');
         Requirements::javascript(project() . '/javascript/jquery.easing.1.3.js');
-        Requirements::javascript('flexslider/thirdparty/FlexSlider/jquery.flexslider.js');
+        Requirements::javascript('flexslider/thirdparty/FlexSlider/jquery.flexslider-min.js');
         Requirements::javascriptTemplate('flexslider/javascript/flexslider.template.js', $flexslider_config);
         
         // load css
         Requirements::css('flexslider/thirdparty/FlexSlider/flexslider.css');   // original css of flexslider
-        Requirements::css('flexslider/css/flexslider.css');                     // additional css for flexslider module for silverstripe
-        Requirements::css($this->ThemeDir().'/css/FlexSlider.css');  // look for a custom FlexSlider.css in the projects themes folder
+        Requirements::css('flexslider/css/flexslider.css');                     // additional css for ss flexslider module
+        Requirements::css($this->ThemeDir().'/css/flexslider.css');             // look for a custom flexslider.css in the projects themes folder
         
         
         return $this->renderWith('FlexSlider');

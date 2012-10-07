@@ -60,41 +60,38 @@ class FlexSlide extends DataObject {
         $field_Position->RightTitle(_t("FlexSlider.PositionExplain"));
         $field_SlideTitle = new TextField("SlideTitle", _t("FlexSlider.Title"));
         $field_SlideDescription = new TextField("SlideDescription", _t("FlexSlider.Description"));
+        $field_HeadlineLinks = new HeaderField("HeadlineLinks", _t("FlexSlider.HeadlineLinks"));
         $field_InternalLink = new TreeDropdownField("InternalLinkID", _t('FlexSlider.InternalLink'), 'SiteTree');
         $field_removeInternalLink = new CheckboxField("doRemoveInternalLink", _t("FlexSlider.doRemoveInternalLink"));
-        $field_ExternalLink = new TextField("ExternalLink", _t("FlexSlider.ExternalLink"));
+        $field_ExternalLink = new TextField("ExternalLink", _t("FlexSlider.or")." "._t("FlexSlider.ExternalLink"));
+        $field_HeadlineEnabled = new HeaderField("HeadlineEnabled", _t("FlexSlider.HeadlineEnabled"));
         $field_isEnabled = new CheckboxField("isEnabled", _t("FlexSlider.isEnabled"));
+        
+        $FieldsArray = array(
+            $field_Position,
+            $field_Picture,
+            $field_SlideTitle,
+            $field_SlideDescription,
+            $field_InternalLink,
+            $field_removeInternalLink,
+            $field_ExternalLink,
+            $field_HeadlineEnabled,
+            $field_isEnabled
+        );
         
         $fields->addFieldToTab('Root.Main', $field_Position);
         $fields->addFieldToTab('Root.Main', $field_Picture);
         $fields->addFieldToTab('Root.Main', $field_SlideTitle);
         $fields->addFieldToTab('Root.Main', $field_SlideDescription);
+        $fields->addFieldToTab('Root.Main', $field_HeadlineLinks);
         $fields->addFieldToTab('Root.Main', $field_InternalLink);
         $fields->addFieldToTab('Root.Main', $field_removeInternalLink);
         $fields->addFieldToTab('Root.Main', $field_ExternalLink);
+        $fields->addFieldToTab('Root.Main', $field_HeadlineEnabled);
         $fields->addFieldToTab('Root.Main', $field_isEnabled);
 
         return $fields;
     }
-    
-                                                // validator (requires https://github.com/lx-berlin/NetefxValidator)
-                                                /*
-                                                public function getCMSValidator() {
-                                                    
-                                                    $rule_DateUntil_empty                   = new NetefxValidatorRuleEMPTY      ("DateUntil");
-                                                    $rule_DateUntil_After_DateFrom          = new NetefxValidatorRuleFUNCTION   ("DateUntil", '', 'error', array('NetefxValidatorLibraryDate', 'UntilIsMinDaysAfterFrom', array('dateFrom'  => 'DateFrom','dateUntil' => 'DateUntil', 'min' => 0)));
-                                                    $rule_DateUntil_empty_OR_After_DateFrom = new NetefxValidatorRuleOR         ("DateUntil", 'Date Until must be equal or after DateFrom', 'error', array($rule_DateUntil_empty, $rule_DateUntil_After_DateFrom));
-                                                    $rule_TitleEN_required                  = new NetefxValidatorRuleREQUIRED   ("TitleEN");
-                                                    $rule_DescriptionEN_required            = new NetefxValidatorRuleREQUIRED   ("DescriptionEN");
-                                                    $rule_CityEN_required                   = new NetefxValidatorRuleREQUIRED   ("CityEN");
-                                                    
-                                                    $validator = new NetefxValidator($rule_DateUntil_empty_OR_After_DateFrom,
-                                                                                     $rule_TitleEN_required,
-                                                                                     $rule_DescriptionEN_required,
-                                                                                     $rule_CityEN_required);
-                                                    return $validator;
-                                                }
-                                                */
     
     public function onBeforeWrite() {
        parent::onBeforeWrite();
