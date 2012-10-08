@@ -11,7 +11,7 @@
 .flexslider .flex-caption { margin: 0px; }
 .flexslider .flex-prev { border: none; }
 .flexslider .flex-next { border: none; }
-.flexslider .slides img { max-width: 100%; border: 0px none; margin: 0px; }
+.flexslider .slides img { max-width: 100%; border: 0px none; margin: 0px; float: none; }
 
 /**
 * Additional Styles

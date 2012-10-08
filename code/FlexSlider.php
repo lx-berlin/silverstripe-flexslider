@@ -35,8 +35,14 @@ class FlexSlider extends DataObject {
     
     public static $has_many = array('FlexSlides' => 'FlexSlide');
     
+    static $defaults = array(
+        'slideshowSpeed' => 7000,
+        'animationSpeed' => 600,
+    );
+    
     // defaults 
     public function populateDefaults() {
+        parent::populateDefaults();
         $this->animation = "slide";
         $this->easing = "linear";
         $this->direction = "horizontal";
@@ -47,7 +53,6 @@ class FlexSlider extends DataObject {
         $this->animationSpeed = 600;
         $this->randomize = 0;
         $this->showControlNav = 1;
-        parent::populateDefaults();
     }
     
     // column names of grid (translated to the current admin language)
@@ -90,10 +95,15 @@ class FlexSlider extends DataObject {
         $field_direction        = new Dropdownfield("direction", _t("FlexSlider.direction"), $directions);
         $field_easing           = new Dropdownfield("easing", _t("FlexSlider.easingType"), $easingTypes);
         $field_easing->setRightTitle(_t("FlexSlider.easingTypeDescription")); 
-        $field_slideshowSpeed   = new NumericField("slideshowSpeed", _t("FlexSlider.slideshowSpeed"));
+        
+        $field_slideshowSpeedvalue = (!$this->ID) ? FlexSlider::$defaults["slideshowSpeed"] : $this->slideshowSpeed;
+        $field_slideshowSpeed   = new NumericField("slideshowSpeed", _t("FlexSlider.slideshowSpeed"),$field_slideshowSpeedvalue);
         $field_slideshowSpeed->setRightTitle(_t("FlexSlider.slideshowSpeedDescription")); 
-        $field_animationSpeed   = new NumericField("animationSpeed", _t("FlexSlider.animationSpeed"));
+        
+        $field_animationSpeedvalue = (!$this->ID) ? FlexSlider::$defaults["animationSpeed"] : $this->animationSpeed;
+        $field_animationSpeed   = new NumericField("animationSpeed", _t("FlexSlider.animationSpeed"), $field_animationSpeedvalue);
         $field_animationSpeed->setRightTitle(_t("FlexSlider.animationSpeedDescription")); 
+        
         $field_randomize        = new CheckboxField("randomize", _t("FlexSlider.randomize"));
         $field_showControlNav   = new CheckboxField("showControlNav", _t("FlexSlider.showControlNav"));
         
