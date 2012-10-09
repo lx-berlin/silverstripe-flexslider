@@ -6,6 +6,7 @@
 .flexslider .slides li { margin: 0px; }
 .flexslider .flex-control-nav { margin: 0px; } 
 .flexslider .flex-control-paging { margin: 0px; }
+.flexslider .flex-control-paging li a { border: 0px; }
 .flexslider .flex-direction-nav { margin: 0px; }
 .flexslider .flex-direction-nav li { list-style-type: none; }
 .flexslider .flex-caption { margin: 0px; }
