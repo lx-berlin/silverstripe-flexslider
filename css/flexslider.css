@@ -4,6 +4,7 @@
 */
 .flexslider .slides { margin: 0px; }
 .flexslider .slides li { margin: 0px; }
+.flexslider .slides > li { position: relative; }
 .flexslider .flex-control-nav { margin: 0px; } 
 .flexslider .flex-control-paging { margin: 0px; }
 .flexslider .flex-control-paging li a { border: 0px; }
