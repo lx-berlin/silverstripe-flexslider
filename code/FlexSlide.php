@@ -10,8 +10,8 @@ class FlexSlide extends DataObject {
     public static $plural_name       = 'Slides';  
    
     public static $db                = array('Position'         => 'Int(2)',
-                                             'SlideTitle'       => 'Varchar',
-                                             'SlideDescription' => 'Varchar',
+                                             'SlideTitle'       => 'Varchar(255)',
+                                             'SlideDescription' => 'Varchar(255)',
                                              'ExternalLink'     => 'Varchar',
                                              'isEnabled'        => 'Boolean');
     
