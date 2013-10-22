@@ -9,7 +9,7 @@
 	    "silverstripe/framework": "~3.0"
 	  },
 	  "extra": {
-	    "installer-name": "flexslider",
+	    "installer-name": "flexslider"
 	  }
 	}	
 	
