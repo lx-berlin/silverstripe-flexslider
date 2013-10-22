@@ -1,6 +1,6 @@
 <div class="flexslider flexslider_{$ID} $extraClass" <% if $cssWidth %>style="width: {$cssWidth}px"<% end_if %>>
   <ul class="slides">
-    <% control getSlides %>
+    <% loop getSlides %>
         <% if $Picture %>
         <li>
             <% if $getSlideTarget %><a href="$getSlideTarget" target="_blank"><% end_if %>
@@ -14,6 +14,6 @@
             <% end_if %>
         </li>
         <% end_if %>
-    <% end_control %>
+    <% end_loop %>
   </ul>
 </div>
