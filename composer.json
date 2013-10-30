@@ -1,0 +1,15 @@
+	{
+	  "name": "lx-berlin/flexslider",
+	  "description": "A module for Silverstripe 3.0 that uses the FlexSlider 2 library to create sliders",
+	  "type": "silverstripe-module",
+	  "homepage": "http://github.com/lx-berlin/silverstripe-flexslider",
+	  "keywords": ["silverstripe", "slider", "flexslider"],
+	  "require": {
+	    "silverstripe/cms": "~3.0",
+	    "silverstripe/framework": "~3.0"
+	  },
+	  "extra": {
+	    "installer-name": "flexslider"
+	  }
+	}	
+	
