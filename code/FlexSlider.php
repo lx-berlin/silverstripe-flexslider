@@ -305,8 +305,10 @@ class FlexSlider extends DataObject {
         $imageHeight = (isset($arguments['height'])) && ((int)$arguments['height']>0) ? (int)$arguments['height'] : null;
         
         $newPage = new Page();
-        $fs = $newPage->FlexSlider($arguments['id'], $arguments['width'], $arguments['height']);
-        $fs->setCSSWidth(true);
+        $fs = $newPage->FlexSlider($arguments['id'], $imageWidth, $imageHeight);
+        if (isset($arguments['fixedWidth']) && $arguments['fixedWidth']) {
+          $fs->setCSSWidth(true);
+        }
         return $fs->forTemplate();
     }
         
