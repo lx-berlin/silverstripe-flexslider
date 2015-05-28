@@ -325,7 +325,7 @@ class FlexSlider extends DataObject
 		if (isset($arguments['fixedWidth']) && $arguments['fixedWidth']) {
 			$fs->setCSSWidth(true);
 		}
-		return $fs->forTemplate();
+		if($fs) return $fs->forTemplate();
 	}
 
 }
