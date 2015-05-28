@@ -30,16 +30,17 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    background: rgba(0,0,0,.3);
+    background: rgba(0,0,0,.5);
     color: #fff;
-    text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+    text-shadow: 0 -1px 0 rgba(0,0,0,.5);
     font-size: 14px;
     line-height: 18px;
 }
 
 .flex-caption-inner             { }
-.flex-caption-inner.heading     { display: block; font-weight: bold; }
+.flex-caption-inner.heading     { display: block; font-weight: bold; border:none; color:#fff; text-align:left; }
 .flex-caption-inner.description { display: block; }
+
 
 /**
 * Bugfix: ist keine Slideshow aktiviert (nur manuelles scrollen), dann sind auf dem ersten und letzten Slide jeweils die deaktivierten navi-buttons ausserhalb des Containers zu sehen
