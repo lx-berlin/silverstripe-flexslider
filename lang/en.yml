@@ -26,3 +26,5 @@ en:
     animationSpeedDescription: "A value of 2000 means, that it takes 2 seconds to fade/slide to the next slide."
     randomize: "Random order"
     showControlNav: "Show paging"
+    shortcodeHeader: "Shortcode"
+    shortcodeUsage: "Copy & paste this shortcode into a CMS content field.  Change the width & height values as desired."

@@ -126,6 +126,15 @@ class FlexSlider extends DataObject
 
 		$fields->addFieldsToTab('Root.Main', $FieldsArray);
 
+		if($this->ID) {
+			$shortcode = '[FlexSlider id="' . $this->ID . '" width="600" height="300"]';
+			$fields->addFieldsToTab('Root.Main', array(
+				HeaderField::create('ShortcodeSection', _t("FlexSlider.shortcodeHeader")),
+				LiteralField::create('ShortcodeUsage', _t("FlexSlider.shortcodeUsage")),
+				LiteralField::create('Shortcode', '<p><div class="message warning">' . $shortcode . '</div></p>')
+			));
+		}
+
 		return $fields;
 	}
 

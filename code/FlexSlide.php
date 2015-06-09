@@ -67,7 +67,6 @@ class FlexSlide extends DataObject
 		$field_InternalLink = new TreeDropdownField("InternalLinkID", _t('FlexSlider.InternalLink'), 'SiteTree');
 		$field_removeInternalLink = new CheckboxField("doRemoveInternalLink", _t("FlexSlider.doRemoveInternalLink"));
 		$field_ExternalLink = new TextField("ExternalLink", _t("FlexSlider.or") . " " . _t("FlexSlider.ExternalLink"));
-		$field_HeadlineEnabled = new HeaderField("HeadlineEnabled", _t("FlexSlider.HeadlineEnabled"));
 		$field_isEnabled = new CheckboxField("isEnabled", _t("FlexSlider.isEnabled"));
 
 		$FieldsArray = array(
@@ -78,7 +77,6 @@ class FlexSlide extends DataObject
 			$field_InternalLink,
 			$field_removeInternalLink,
 			$field_ExternalLink,
-			$field_HeadlineEnabled,
 			$field_isEnabled
 		);
 
@@ -90,7 +88,6 @@ class FlexSlide extends DataObject
 		$fields->addFieldToTab('Root.Main', $field_InternalLink);
 		$fields->addFieldToTab('Root.Main', $field_removeInternalLink);
 		$fields->addFieldToTab('Root.Main', $field_ExternalLink);
-		$fields->addFieldToTab('Root.Main', $field_HeadlineEnabled);
 		$fields->addFieldToTab('Root.Main', $field_isEnabled);
 
 		return $fields;
