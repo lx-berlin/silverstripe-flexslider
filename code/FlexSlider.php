@@ -91,6 +91,7 @@ class FlexSlider extends DataObject
 		$directions = $this->dbObject("direction")->enumValues();
 
 		// Main
+		$field_Usage = new LiteralField("Usage", "<div class=\"message warning\">"._t("FlexSlider.Usage")."</div>");
 		$field_Title = new TextField("Title", _t("FlexSlider.Title"));
 		$field_Title->setRightTitle(_t("FlexSlider.TitleDescription"));
 		$field_slideshow = new CheckboxField("slideshow", _t("FlexSlider.slideshow"));
@@ -112,6 +113,7 @@ class FlexSlider extends DataObject
 		$field_showControlNav = new CheckboxField("showControlNav", _t("FlexSlider.showControlNav"));
 
 		$FieldsArray = array(
+			$field_Usage,
 			$field_Title,
 			$field_slideshow,
 			$field_animationLoop,

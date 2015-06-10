@@ -1,6 +1,7 @@
 en:
   FlexSlider:
     Yes: "Yes"
+    Usage: "Sliders created here can be used in CMS content blocks on one or more pages.  Once you've created the slider with slides, a shortcode will be generated (below) for copy & paste into the content block."
     Title: "title"
     TitleDescription: "Only for overview in cms"
     Description: "description"
