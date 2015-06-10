@@ -11,15 +11,19 @@ class FlexSlide extends DataObject
 	public static $singular_name = 'Slide';
 	public static $plural_name = 'Slides';
 
-	public static $db = array('Position' => 'Int(2)',
+	public static $db = array(
+		'Position' => 'Int',
 		'SlideTitle' => 'Varchar(255)',
 		'SlideDescription' => 'Varchar(255)',
 		'ExternalLink' => 'Varchar',
-		'isEnabled' => 'Boolean');
+		'isEnabled' => 'Boolean'
+	);
 
-	public static $has_one = array('FlexSlider' => 'FlexSlider',
+	public static $has_one = array(
+		'FlexSlider' => 'FlexSlider',
 		'Picture' => 'Image',
-		'InternalLink' => 'SiteTree');
+		'InternalLink' => 'SiteTree'
+	);
 
 	public static $many_many = array();
 
