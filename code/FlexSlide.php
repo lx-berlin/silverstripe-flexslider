@@ -51,6 +51,11 @@ class FlexSlide extends DataObject
 		'isEnabledText'
 	);
 
+	/**
+	 * @config
+	 */
+	private static $hide_position = false;
+
 	// form to add/edit records
 	public function getCMSFields()
 	{
@@ -73,18 +78,12 @@ class FlexSlide extends DataObject
 		$field_ExternalLink = new TextField("ExternalLink", _t("FlexSlider.or") . " " . _t("FlexSlider.ExternalLink"));
 		$field_isEnabled = new CheckboxField("isEnabled", _t("FlexSlider.isEnabled"));
 
-		$FieldsArray = array(
-			$field_Position,
-			$field_Picture,
-			$field_SlideTitle,
-			$field_SlideDescription,
-			$field_InternalLink,
-			$field_removeInternalLink,
-			$field_ExternalLink,
-			$field_isEnabled
-		);
+		if($this->config()->hide_position) {
+			$fields->removeByName('Position');
+		} else {
+			$fields->addFieldToTab('Root.Main', $field_Position);
+		}
 
-		$fields->addFieldToTab('Root.Main', $field_Position);
 		$fields->addFieldToTab('Root.Main', $field_Picture);
 		$fields->addFieldToTab('Root.Main', $field_SlideTitle);
 		$fields->addFieldToTab('Root.Main', $field_SlideDescription);
@@ -147,4 +146,8 @@ class FlexSlide extends DataObject
 		return $link;
 	}
 
+	public function getTitle()
+	{
+		return $this->SlideTitle;
+	}
 }
