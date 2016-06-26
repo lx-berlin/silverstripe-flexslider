@@ -1,6 +1,7 @@
 en:
   FlexSlider:
     Yes: "Yes"
+    Usage: "Sliders created here can be used in CMS content blocks on one or more pages.  Once you've created the slider with slides, a shortcode will be generated (below) for copy & paste into the content block."
     Title: "title"
     TitleDescription: "Only for overview in cms"
     Description: "description"
@@ -26,3 +27,5 @@ en:
     animationSpeedDescription: "A value of 2000 means, that it takes 2 seconds to fade/slide to the next slide."
     randomize: "Random order"
     showControlNav: "Show paging"
+    shortcodeHeader: "Shortcode"
+    shortcodeUsage: "Copy & paste this shortcode into a CMS content field.  Change the width & height values as desired."
